@@ -38,17 +38,7 @@ function getUserInfo() {
             renderAvatar(res.data);
         },
         // 不论成功还是失败最终都会调用这个函数
-        complete: function (res) {
-            console.log(res);
-            // 当获取用户数据失败时强制回到登录界面
-            // 在complete回调函数中可以使用res.responseJSON 拿到服务器响应回来的数据
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                // 1.强制清空token
-                localStorage.removeItem('token');
-                // 2.强制跳转回登录页面
-                location.href = '/login.html';
-            }
-        }
+
     })
 }
 // 渲染用户头像

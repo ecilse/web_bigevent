@@ -10,7 +10,6 @@ $.ajaxPrefilter(function (options) {
     };
     // 全局统一挂载这个登录验证函数
     options.complete = function (res) {
-        console.log(res);
         // 当获取用户数据失败时强制回到登录界面
         // 在complete回调函数中可以使用res.responseJSON 拿到服务器响应回来的数据
         if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
